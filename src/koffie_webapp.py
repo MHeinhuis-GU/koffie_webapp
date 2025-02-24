@@ -121,13 +121,13 @@ file_path = 'coffee_data.csv'
 if not os.path.exists(file_path):
     with open(file_path, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Floor', 'Time', 'Duration'])
+        writer.writerow(['Floor', 'Drink', 'Machine', 'Time', 'Duration'])
 
 if st.button('Done'):
     # Write the data to the CSV file
     with open(file_path, mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([floor, time.strftime("%H:%M:%S"), duration])
+        writer.writerow([floor, drink, machine, time.strftime("%H:%M:%S"), duration])
 
     st.write(f"Data saved to {file_path}")
 
